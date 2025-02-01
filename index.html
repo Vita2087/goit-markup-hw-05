@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- МАКЕТ
  https://www.figma.com/design/8BFZB4eEboWqd2iz3lM3X1/Web-Studio-(Version-5.0)-(Copy)?node-id=296708-626&p=f&t=jWHRd68fOqrZZ3jA-0 -->
+    <!-- Оптимізувати jpg https://squoosh.app/ -->
+    <!-- Викачати svg https://icomoon.io/app/#/select -->
     <title>WebStudio</title>
     <!-- НОРМАЛАЙЗ -->
     <link
@@ -82,7 +84,7 @@
           <h2 class="visually-hidden">Advantages</h2>
           <ul class="advant-list">
             <li class="advant-item">
-              <div class="advant-icons">
+              <div class="div-advant-icons">
                 <svg class="icon-antenna" width="64" height="64">
                   <use href="./images/icons.svg#icon-antenna"></use>
                 </svg>
@@ -94,7 +96,7 @@
               </p>
             </li>
             <li class="advant-item">
-              <div class="advant-icons">
+              <div class="div-advant-icons">
                 <svg class="" width="64" height="64">
                   <use href="./images/icons.svg#icon-clock"></use>
                 </svg>
@@ -106,7 +108,7 @@
               </p>
             </li>
             <li class="advant-item">
-              <div class="advant-icons">
+              <div class="div-advant-icons">
                 <svg class="" width="64" height="64">
                   <use href="./images/icons.svg#icon-diagram"></use>
                 </svg>
@@ -118,7 +120,7 @@
               </p>
             </li>
             <li class="advant-item">
-              <div class="advant-icons">
+              <div class="div-advant-icons">
                 <svg class="" width="64" height="64">
                   <use href="./images/icons.svg#icon-astronaut"></use>
                 </svg>
@@ -493,28 +495,97 @@
           <form class="footer-form" name="footer-form-footer">
             <label off="inp-email">
               <input
-                id="inp-email"
                 class="footer-input"
                 type="email"
                 name="email"
                 placeholder="E-mail"
+                id="inp-email"
               />
             </label>
-            <!-- <div class="button-container"> -->
-              <button class="button footer-btn" type="submit">
-                Subscribe
-                  <svg class="footer-icon" width="24" height="24">
-                    <use href="./images/icons.svg#icon-plane"></use>
-                  </svg>
-              </button>
-            <!-- </div> -->
+            <button class="button footer-btn" type="submit">
+              Subscribe
+              <svg class="footer-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-plane"></use>
+              </svg>
+            </button>
           </form>
         </div>
       </div>
     </footer>
     <!------------------------------------------ Backdrop + Modal Window -->
-    <div class="backdrop /*is-open*/">
-      <div class="modal"></div>
+    <div class="backdrop is-open">
+      <div class="modal">
+        <!------------------------------------------------ FORM ----------->
+        <button class="form-btn-cross" type="button">
+          <svg class="cross" width="8" height="8">
+            <use href="./images/icons.svg#icon-cross"></use>
+          </svg>
+        </button>
+        <p class="p-form-modal">
+          Leave your contacts and we will call you back
+        </p>
+        <form class="form-modal">
+          <div class="div-label-input">
+            <lable for="name" class="lable-form">Name</lable>
+            <div class="div-input-icon">
+              <input
+                class="input-form"
+                id="name"
+                type="text"
+                name="name"
+                required
+                minlength="2"
+                autofocus
+              />
+              <svg class="input-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="div-label-input">
+            <lable for="phone" class="lable-form">Phone</lable>
+            <div class="div-input-icon">
+              <input class="input-form" id="phone" type="tel" name="phone" required minlength="10"/>
+              <svg class="input-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="div-label-input">
+            <lable for="email" class="lable-form">Email</lable>
+            <div class="div-input-icon">
+              <input class="input-form" id="email" type="email" name="email" />
+              <svg class="input-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="div-label-input">
+            <lable for="comment" class="lable-form">Comment</lable>
+            <textarea
+              class="textarea-form"
+              id="comment"
+              name="comment"
+              rows="120"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+        </form>
+        <!-- -----------------------------------------------------CHECKBOX -->
+        <div class="div-input-checkbox">
+          <input class="accept" type="checkbox" name="checkbox" id="accept" value="true"/>
+          <label for="accept">
+            <span class="box-check" ><svg class="check-icon" width="16" height="16">
+              <use href=""></use>
+            </svg></span>
+            I accept the terms and conditions of the 
+            <a class="privacy-policy" href="">Privacy Policy</a>
+          </label>
+        </div>
+      </div>
     </div>
   </body>
 </html>
