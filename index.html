@@ -70,7 +70,9 @@
       <section class="hero-image">
         <div class="container hero-container">
           <h1 class="page-title">Effective Solutions for Your Business</h1>
-          <button class="button-text" type="button">Order Service</button>
+          <button class="button button-text" type="button">
+            Order Service
+          </button>
         </div>
       </section>
       <!------------------------------------------------- SECTION 2. H2+ul>h3>p -->
@@ -486,10 +488,32 @@
             </li>
           </ul>
         </div>
+        <div class="footer-el-three">
+          <p class="footer-p-two">Subscribe</p>
+          <form class="footer-form" name="footer-form-footer">
+            <label off="inp-email">
+              <input
+                id="inp-email"
+                class="footer-input"
+                type="email"
+                name="email"
+                placeholder="E-mail"
+              />
+            </label>
+            <!-- <div class="button-container"> -->
+              <button class="button footer-btn" type="submit">
+                Subscribe
+                  <svg class="footer-icon" width="24" height="24">
+                    <use href="./images/icons.svg#icon-plane"></use>
+                  </svg>
+              </button>
+            <!-- </div> -->
+          </form>
+        </div>
       </div>
     </footer>
     <!------------------------------------------ Backdrop + Modal Window -->
-    <div class="backdrop is-open">
+    <div class="backdrop /*is-open*/">
       <div class="modal"></div>
     </div>
   </body>
