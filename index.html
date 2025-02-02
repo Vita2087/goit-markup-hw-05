@@ -514,6 +514,7 @@
     </footer>
     <!------------------------------------------ Backdrop + Modal Window -->
     <div class="backdrop is-open">
+      <!--  -->
       <div class="modal">
         <!------------------------------------------------ FORM ----------->
         <button class="form-btn-cross" type="button">
@@ -546,7 +547,14 @@
           <div class="div-label-input">
             <lable for="phone" class="lable-form">Phone</lable>
             <div class="div-input-icon">
-              <input class="input-form" id="phone" type="tel" name="phone" required minlength="10"/>
+              <input
+                class="input-form"
+                id="phone"
+                type="tel"
+                name="phone"
+                required
+                minlength="10"
+              />
               <svg class="input-icon" width="18" height="24">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
@@ -575,16 +583,28 @@
           </div>
         </form>
         <!-- -----------------------------------------------------CHECKBOX -->
-        <div class="div-input-checkbox">
-          <input class="accept" type="checkbox" name="checkbox" id="accept" value="true"/>
-          <label for="accept">
-            <span class="box-check" ><svg class="check-icon" width="16" height="16">
-              <use href=""></use>
-            </svg></span>
-            I accept the terms and conditions of the 
+        <div class="div-input-checkbox-label">
+          <!-- в інпуті типу чекбокс є оригінальний від браузера чекбокс, його тре приховати і в спані намалювати квадратик -->
+          <input
+            class="input-check visually-hidden"
+            type="checkbox"
+            name="checkbox"
+            id="accept"
+            value="true"
+          />
+          <!-- в спані квадратик для галочки -->
+          <span class="box-check">
+            <svg class="check-icon" width="10" height="8">
+              <use href="./images/icons.svg#icon-Vector"></use>
+            </svg>
+          </span>
+
+          <label for="accept" class="label-check">
+            I accept the terms and conditions of the
             <a class="privacy-policy" href="">Privacy Policy</a>
           </label>
         </div>
+        <button class="form-btn" type="submit">Send</button>
       </div>
     </div>
   </body>

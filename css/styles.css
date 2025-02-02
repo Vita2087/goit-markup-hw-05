@@ -33,6 +33,18 @@ button {
   padding: 0 15px;
   margin: 0 auto;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 img {
   display: block;
   min-width: 100%;
@@ -42,7 +54,12 @@ input {
   font-family: inherit;
   font-weight: inherit;
 }
-input,textarea {padding: 0;}
+input,
+textarea {
+  padding: 0;
+}
+/* *:focus {
+  outline: none;} */
 /* --------------------------------------HEADER----------------------------------------- */
 .page-header {
   border-bottom: 1px solid #e7e9fc;
@@ -167,10 +184,10 @@ button {
   letter-spacing: 0.04em;
   color: #fff;
   background-color: #4d5ae5;
-  border: none;
-  border-radius: 4px;
 }
 .button-text {
+  border: none;
+  border-radius: 4px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -188,18 +205,6 @@ button {
   display: none; 
 } /*приховати h2 якого не відображ на сайті */
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
 .advant {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -496,18 +501,25 @@ button {
   pointer-events: auto;
 }
 
-.modal {
-  position: absolute;
-  top: 50%;
+.modal /*вікно*/ {
+  position: absolute; /*зпозиціоноване вікно відносно перекриваючого фіксованого фону*/
+  top: 50%; /* точка лівого верхнього кута стала на 50% від верху перекриваючого фону і на 50% від лівого краю фону(бекдропу), точка чітко по центру, а прямокутник(вікно) відповідно правіше.*/
   left: 50%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(
+    -50%,
+    -50%
+  ); /* вікно зміщене на 50% від його ширини вліво і на 50% вверх,*/
   width: 408px;
   min-height: 584px;
   border-radius: 4px;
   background-color: #fcfcfc;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop:not(.is-open) .modal {
+  /*коли у перекриваючого фона нема класу .is-open вікно закрите і має нову анімацію scale 1.5,тобто у 1.5рази збільшене, а коли появиться клас-вікно появиться зі збільшеного стану і анімується в спокійний, тобто менший розмір */
+  transform: translate(-50%, -50%) scale(1.5);
 }
 /* ------------------------------------------FORM---------------------- */
 .form-btn-cross {
@@ -525,20 +537,21 @@ button {
   margin-bottom: 24px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-btn-upper:hover {
+.form-btn-cross:hover {
   background-color: #404bbf;
+  border-color: transparent;
+}
+.form-btn-cross:hover .cross {
   fill: #fff;
 }
-/* .form-btn-upper:hover .div-input-icon {
-  background-color: #fff;
-} */
 .p-form-modal {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  text-align: center;
   color: #2e2f42;
+
+  text-align: center;
   padding-top: 72px;
   margin-bottom: 16px;
 }
@@ -560,6 +573,7 @@ button {
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
+  display: block;
 }
 .div-input-icon {
   position: relative;
@@ -569,21 +583,20 @@ button {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-form {
-  width: 100%;  /*від ширини форми, а у форми шир фікс*/
+  width: 100%; /*від ширини форми, а у форми шир фікс*/
   height: 40px;
   padding-left: 38px;
   margin-bottom: 8px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
+  outline: transparent;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/* .input-form:hover {
-  color: #404bbf;
-} */
 .input-form:focus {
-  border: #4d5ae5;
+  border-color: #4d5ae5;
 }
 .input-form:focus + .input-icon {
   fill: #4d5ae5;
@@ -593,23 +606,86 @@ button {
   width: 100%;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  padding-top: 8px;
-  padding-left: 16px;
+  padding: 8px 16px;
   margin-bottom: 16px;
   resize: none;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  outline: transparent;
+   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .textarea-form::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
-.div-input-checkbox {
+.textarea-form:focus {
+  border-color: #4d5ae5;
+}
+.div-input-checkbox-label {
+  display: flex;
+  align-items: center;
+}
+.input-check {
+  /* margin-left: 24px;
+  margin-right: 8px;
+  margin-bottom: 24px; */
 }
 .box-check {
-  /* width: 16px;
-  height: 16px; */
+  width: 16px;
+  height: 16px;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  margin-right: 8px;
+  margin: 16px 8px 24px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-icon {
+  fill: transparent;
+}
+.label-check {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  
+}
+.privacy-policy {
+  text-decoration: underline;
+  line-height: 1.33;
+  font-size: 12px;
+  text-decoration: underline;
+  color: #4d5ae5;
+}
+.input-check:checked + .label-check .box-check {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+.form-btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+
+  background-color: #4d5ae5;
+  border: none;
+  border-radius: 4px;
+  min-width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-btn:hover,
+.form-btn:focus {
+  background-color: #404bbf;
 }
