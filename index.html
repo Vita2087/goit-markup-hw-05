@@ -72,7 +72,7 @@
       <section class="hero-image">
         <div class="container hero-container">
           <h1 class="page-title">Effective Solutions for Your Business</h1>
-          <button class="button button-text" type="button">
+          <button class="button button-text" type="button" data-modal-open>
             Order Service
           </button>
         </div>
@@ -493,7 +493,7 @@
         <div class="footer-el-three">
           <p class="footer-p-two">Subscribe</p>
           <form class="footer-form" name="footer-form-footer">
-            <label off="inp-email">
+            <label for="inp-email" class="footer-label">
               <input
                 class="footer-input"
                 type="email"
@@ -513,11 +513,11 @@
       </div>
     </footer>
     <!------------------------------------------ Backdrop + Modal Window -->
-    <div class="backdrop is-open">
+    <div class="backdrop <!--is-open-->" data-modal>
       <!--  -->
       <div class="modal">
         <!------------------------------------------------ FORM ----------->
-        <button class="form-btn-cross" type="button">
+        <button class="form-btn-cross" type="button" data-modal-close>
           <svg class="cross" width="8" height="8">
             <use href="./images/icons.svg#icon-cross"></use>
           </svg>
@@ -527,13 +527,13 @@
         </p>
         <form class="form-modal">
           <div class="div-label-input">
-            <lable for="name" class="lable-form">Name</lable>
+            <lable for="user-name" class="lable-form">Name</lable>
             <div class="div-input-icon">
               <input
                 class="input-form"
-                id="name"
+                id="user-name"
                 type="text"
-                name="name"
+                name="user-name"
                 required
                 minlength="2"
                 autofocus
@@ -545,13 +545,13 @@
           </div>
 
           <div class="div-label-input">
-            <lable for="phone" class="lable-form">Phone</lable>
+            <lable for="user-phone" class="lable-form">Phone</lable>
             <div class="div-input-icon">
               <input
                 class="input-form"
-                id="phone"
+                id="user-phone"
                 type="tel"
-                name="phone"
+                name="user-phone"
                 required
                 minlength="10"
               />
@@ -572,11 +572,11 @@
           </div>
 
           <div class="div-label-input">
-            <lable for="comment" class="lable-form">Comment</lable>
+            <lable for="user-comment" class="lable-form">Comment</lable>
             <textarea
               class="textarea-form"
-              id="comment"
-              name="comment"
+              id="user-comment"
+              name="user-comment"
               rows="120"
               placeholder="Text input"
             ></textarea>
@@ -588,8 +588,8 @@
           <input
             class="input-check visually-hidden"
             type="checkbox"
-            name="checkbox"
-            id="accept"
+            name="user-privacy"
+            id="user-privacy"
             value="true"
           />
           <!-- в спані квадратик для галочки -->
@@ -599,7 +599,7 @@
             </svg>
           </span>
 
-          <label for="accept" class="label-check">
+          <label for="user-privacy" class="label-check">
             I accept the terms and conditions of the
             <a class="privacy-policy" href="">Privacy Policy</a>
           </label>
@@ -607,5 +607,7 @@
         <button class="form-btn" type="submit">Send</button>
       </div>
     </div>
+
+    <script src="./Js/modal.js"></script>
   </body>
 </html>
