@@ -638,11 +638,12 @@ button {
 }
 /* ----------------------------------------------CHECKBOX --------------------*/
 .div-input-checkbox-label {
-  /* margin-bottom: 24px;
-  display: flex;
-  align-items: center; */
-  /* gap: 24px; */
+  margin-bottom: 24px;
 }
+/*display: flex;
+  align-items: center; */
+/* gap: 24px; */
+
 .input-check {
   /* margin-left: 24px;
   margin-right: 8px;
@@ -659,7 +660,7 @@ button {
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
-  margin: 0 8px 24px 0;
+  margin-right: 8px;
 
   display: inline-flex; /*для вирівн іконки-галочки*/
   align-items: center;
