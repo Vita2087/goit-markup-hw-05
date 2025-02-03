@@ -385,10 +385,10 @@ button {
   display: inline-block;
   margin-bottom: 16px;
 }
-.footer-el-one {
+.footer-block-left {
   margin-right: 120px;
 }
-.footer-p-one {
+.footer-p-left {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -399,10 +399,10 @@ button {
   display: flex;
   align-items: baseline; /*вирівнює блоки по вертикалі відносно лінії тексту першого рядка кожного елемента*/
 }
-/* .footer-el-two {
+/* .footer-block-center {
   padding-bottom: 132px;
 } */
-.footer-p-two {
+.footer-p-center {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -435,7 +435,7 @@ button {
 .footer-soc-icon {
   fill: #f4f4fd;
 }
-.footer-el-three {
+.footer-block-right {
   margin-left: auto;
 }
 .footer-form {
@@ -444,16 +444,16 @@ button {
   gap: 24px;
 }
 .footer-input {
+  color: #fff;
+  background-color: transparent;
   border: 1px solid #fff;
   border-radius: 4px;
   width: 264px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #2e2f42;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
   padding-left: 16px;
 }
 .footer-input::placeholder {
@@ -470,7 +470,7 @@ button {
   gap: 16px;
   min-width: 165px;
   height: 40px;
-  bottom: none;
+  border: none;
   border-radius: 4px;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -519,10 +519,11 @@ button {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
 }
 .backdrop:not(.is-open) .modal {
-  /*коли у перекриваючого фона нема класу .is-open вікно закрите і має нову анімацію scale 1.5,тобто у 1.5рази збільшене, а коли появиться клас-вікно появиться зі збільшеного стану і анімується в спокійний, тобто менший розмір */
-  transform: translate(-50%, -50%) scale(1.5);
+  /*коли у перекриваючого фона нема класу .is-open вікно закрите і має нову анімацію scale 2,тобто у 2рази збільшене, а коли появиться клас-вікно появиться зі збільшеного стану і анімується в спокійний, тобто менший розмір */
+  transform: translate(-50%, -50%) scale(2);
 }
 /* ------------------------------------------FORM---------------------- */
 .form-btn-cross {
@@ -546,7 +547,8 @@ button {
   background-color: #404bbf;
   border: none;
 }
-.form-btn-cross:hover .cross {
+.form-btn-cross:hover .cross,
+.form-btn-cross:focus .cross {
   fill: #fff;
 }
 .cross {
@@ -560,7 +562,6 @@ button {
   color: #2e2f42;
 
   text-align: center;
-  padding-top: 72px;
   margin-bottom: 16px;
 }
 .form-modal {
@@ -571,9 +572,10 @@ button {
   border-radius: 4px;
   display: block;
 }
-.div-label-input {
-  display: block;
+.div-label-input /*перша дочка форми*/{
+  /* display: block; */
   width: 100%;
+  margin-bottom: 8px;
 }
 .lable-form {
   font-size: 12px;
@@ -598,7 +600,6 @@ button {
   width: 100%; /*від ширини форми, а у форми шир фікс*/
   height: 40px;
   padding-left: 38px;
-  margin-bottom: 8px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   outline: transparent;
