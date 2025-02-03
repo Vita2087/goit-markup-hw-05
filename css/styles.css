@@ -572,12 +572,15 @@ button {
   border-radius: 4px;
   display: block;
 }
-.div-label-input /*перша дочка форми*/{
+.div-label-input /*перша дочка форми*/ {
   /* display: block; */
   width: 100%;
   margin-bottom: 8px;
 }
-.lable-form {
+.div-label-textarea {
+  margin-bottom: 16px;
+}
+.label-form {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -619,7 +622,7 @@ button {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding: 8px 16px;
-  margin-bottom: 16px;
+
   resize: none;
   font-size: 12px;
   line-height: 1.17;
@@ -633,31 +636,17 @@ button {
 .textarea-form:focus {
   border-color: #4d5ae5;
 }
+/* ----------------------------------------------CHECKBOX --------------------*/
 .div-input-checkbox-label {
+  /* margin-bottom: 24px;
   display: flex;
-  align-items: center;
+  align-items: center; */
+  /* gap: 24px; */
 }
 .input-check {
   /* margin-left: 24px;
   margin-right: 8px;
   margin-bottom: 24px; */
-}
-.box-check {
-  width: 16px;
-  height: 16px;
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  margin: 16px 8px 24px 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.check-icon {
-  fill: transparent;
 }
 .label-check {
   font-size: 12px;
@@ -665,18 +654,35 @@ button {
   letter-spacing: 0.04em;
   color: #8e8f99;
 }
+.box-check /* малюєм кубик-фейковий чекбокс для галочки*/ {
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+  margin: 0 8px 24px 0;
+
+  display: inline-flex; /*для вирівн іконки-галочки*/
+  align-items: center;
+  justify-content: center;
+  fill: transparent; /*для прозорої галочки коли інпут не чекнутий, стан спокою*/
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .privacy-policy {
   text-decoration: underline;
   line-height: 1.33;
   font-size: 12px;
-  text-decoration: underline;
   color: #4d5ae5;
 }
+/* властивості отримує фейковий чекбокс=дитина лейбла сусідом котрого є поле-чекбокс в стані коли на нього нажали */
 .input-check:checked + .label-check .box-check {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
 }
+
 .form-btn {
   font-weight: 500;
   font-size: 16px;
