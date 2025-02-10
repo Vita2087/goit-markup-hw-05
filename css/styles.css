@@ -47,7 +47,7 @@ button {
 }
 img {
   display: block;
-  min-width: 100%;
+   max-width: 100%;  /*щоб img адаптувалися під ширину батьківського блоку. */
   height: auto;
 }
 input {
@@ -150,7 +150,7 @@ textarea {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*-------------------------------------- SECTION 1------------------------------------- */
-.hero-image {
+.section-hero {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
@@ -185,7 +185,7 @@ button {
   color: #fff;
   background-color: #4d5ae5;
 }
-.button-text {
+.button-box {
   border: none;
   border-radius: 4px;
   display: block;
@@ -205,25 +205,24 @@ button {
   display: none; 
 } /*приховати h2 якого не відображ на сайті */
 
-.advant {
-  padding-top: 120px;
-  padding-bottom: 120px;
+.second-section {
+  padding: 120px 0;
 }
-.advant-list {
+.second-section-list {
   display: flex;
   align-items: center;
   gap: 24px;
 }
-.advant-item {
+.second-section-item {
   /* (100%-3 * 24px) / 4) */
   width: calc((100% - 72px) / 4);
 }
-.div-advant-icons {
+.div-second-section-icons {
   background-color: #f4f4fd;
   border: 1px solid #8e8f99;
   border-radius: 4px;
-  width: 264px;
-  /* padding: 24px 100px; */
+  /* width: 264px; шир визначена формулою уже (калком) */
+  /* padding: 24px 100px; зтискає іконку,зменшує. краще флексом центрувати*/ 
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -245,10 +244,9 @@ button {
   color: #434455;
 }
 /* -----------------------------------SECTION 3---------------------------------------- */
-.team {
+.third-section-team {
   background: #f4f4fd;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 120px 0;
 }
 .section-title {
   font-weight: 700;
@@ -272,7 +270,7 @@ button {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
-.div-who-is {
+.div-team-who-is {
   padding: 32px 0; /* 16px; */
   text-align: center;
 }
@@ -280,7 +278,7 @@ button {
   width: 232px;
   height: px;
 } */
-.icons-list-whois {
+.team-soc-icons-list {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,9 +309,8 @@ button {
   margin-right: 24px;
 } */
 /* ------------------------------------------------SECTION 4---------------------------------------------- 4 */
-.our-portfolio {
-  padding-top: 120px;
-  padding-bottom: 120px;
+.fourth-section-portfolio {
+  padding: 120px 0;
 }
 .section-title {
   margin-bottom: 72px;
@@ -375,8 +372,7 @@ button {
 /* ----------------------------------- FOOTER-------------------------------------------- */
 .page-footer {
   background: #2e2f42;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding: 100px 0;
 }
 .logo-footer .logo-part {
   color: #f4f4fd;
@@ -480,7 +476,6 @@ button {
 }
 .footer-icon {
   fill: #fff;
-  margin-left: 16px;
 }
 /*------------------------------------ Backdrop + Modal Window------------------------- */
 .backdrop {
@@ -560,7 +555,6 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #2e2f42;
-
   text-align: center;
   margin-bottom: 16px;
 }
